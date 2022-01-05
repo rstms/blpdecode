@@ -108,3 +108,5 @@ ENV/
 # locals
 .dist
 .timestamp
+docs/modules.rst
+docs/blpdecode.rst
