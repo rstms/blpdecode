@@ -22,7 +22,8 @@ classifiers = [
 dynamic = ["version", "description"] 
 
 dependencies = [
-  "click == 8.0.3"
+  "click == 8.0.3",
+  "requests == 2.27.1"
 ]
 
 [project.optional-dependencies]
