@@ -4,6 +4,7 @@ import sys
 
 import click
 
+from .blpdecode import decode
 from .version import __version__, __timestamp__
 header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 
@@ -11,6 +12,7 @@ header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 @click.command("blpdecode")
 @click.version_option(message=header)
 @click.option("-d", "--debug", is_flag=True, help="debug mode")
+@click.argument("encoded-url", type=str)
 def cli(debug):
 
     def exception_handler(
@@ -25,7 +27,7 @@ def cli(debug):
     sys.excepthook = exception_handler
 
     """cli for blpdecode."""
-    raise RuntimeError("Add application code to blpdecode/cli.py")
+    click.echo(decode(encoded_url))
     return 0
 
 
