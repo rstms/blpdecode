@@ -5,7 +5,7 @@
 import pytest
 from click.testing import CliRunner
 
-from blpdecode import __version__, cli, blpdecode
+from blpdecode import __version__, blpdecode, cli
 
 
 @pytest.fixture

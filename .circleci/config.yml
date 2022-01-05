@@ -19,7 +19,7 @@ jobs:
           command: |
             python -m venv venv
             . venv/bin/activate
-            pip install --upgrade pip setuptools wheel
+            pip install --upgrade pip setuptools wheel flit
             make dev
             pip install --upgrade tox-pyenv
       - run:

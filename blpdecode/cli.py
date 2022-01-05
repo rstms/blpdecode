@@ -5,7 +5,8 @@ import sys
 import click
 
 from .blpdecode import decode
-from .version import __version__, __timestamp__
+from .version import __timestamp__, __version__
+
 header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 
 
@@ -13,8 +14,7 @@ header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 @click.version_option(message=header)
 @click.option("-d", "--debug", is_flag=True, help="debug mode")
 @click.argument("encoded-url", type=str)
-def cli(debug):
-
+def cli(debug, encoded_url):
     def exception_handler(
         exception_type, exception, traceback, debug_hook=sys.excepthook
     ):
